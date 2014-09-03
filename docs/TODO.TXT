@@ -1,0 +1,25 @@
+
+BACKLOG:
+- colorama
+- installation
+- incorporate awesome CMD line apps talk
+- edit contacts feature
+- documentation
+- I can edit contacts via the command line
+- I can send email to a group of contacts
+
+USAGE:
+
+1. install
+sudo cp crm /usr/bin
+sudo chmod a+x /usr/bin/crm
+
+2. add variables to .bashrc
+export ACADEMIS_CRM_PATH=/home/name/path_to_.txt_files/
+export ACADEMIS_CRM_APP=/home/name/path_to/crm.py
+
+3. add tab-separated text files ending with text to ACADEMIS_CRM_PATH
+
+4. search contacts
+crm Kristian
+also see todo.txt app
