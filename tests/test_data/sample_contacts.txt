@@ -1,0 +1,12 @@
+Jessy;;Charite Preissner;;jessica.ahmed@charite.de;;;;;;
+Jing Hu;;Charite Fan Hua;;jinghu777@gmail.com;;;;8445 1545;;
+Joanna Kasprzak;;PyRy3D  jkasp@amu.edu.pl;;;;;;;;
+Jorge Numata;;FU Knapp;;jorge.numata@gmail.com;;;;8385 3484;;
+Jörn Dietrich;;Braunschweig?;;joedietrich@web.de;;;;815 24 12;;0176 25 35 33 66
+Julia Hoßbach;;Charite Preissner;;julia.hossbach@charite.de;;;;Ex Bei Robert;;
+Kam Dahlquist;;BOSC training;;kdahlquist@lmu.edu;;;; SoftDev/communication with students;;
+Kara van Aelst;;Marie Curie;;kara.vanaelst@bristol.ac.uk;;;;;;
+Karla Koepke;;RKI;;;;;;18754-3759.;;
+Karol Kozak;;UAM habil;;karol.kozak@lmc.biol.ethz.ch;;;;;;
+Karol Wyszomirski;;Marie Curie;;karol-henryk.wyszomirski@charite.de
+invalid record because there are no separators
