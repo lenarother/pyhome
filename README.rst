@@ -2,6 +2,15 @@
 pyhome
 ======
 
+Scripts we use to manage our tech geek household.
+
+See COPYING for licensing details.
+(c) 2014 Magdalena & Kristian Rother
+
+.. image:: task_dishes.png
+
+----
+
 Your project was successfully set up with PyScaffold 1.0c2.
 Following features are available:
 
