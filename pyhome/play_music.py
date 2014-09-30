@@ -16,6 +16,11 @@ MUSIC = {
 'zaz': 'https://www.youtube.com/watch?v=3HzfoQGX3U4&list=PL25D2D0FC0B679AB6&index=2',
 'bluesbrothers': 'https://www.youtube.com/watch?v=owCtCy55S2k&list=PL79375DB53E511C2E',
 'pulpfiction': 'https://www.youtube.com/watch?v=DZXlZXS9uLU&list=PL91AE989DF30F66AC',
+'peterfox': 'https://www.youtube.com/watch?v=Ouuzq8DzHqg&list=PL052A8134A1A2DEFA',
+'norahjones':'https://www.youtube.com/watch?v=8UZokFgzKYc',
+'bregovic':'https://www.youtube.com/watch?v=vsXsTYfrQIw',
+'buenavista':'https://www.youtube.com/watch?v=HaerapRPS64',
+'cesaria':'https://www.youtube.com/watch?v=oWYKTiqPvYA',
 }
 
 class MusicPlayer:
