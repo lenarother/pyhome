@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 from tweet import send_tweet
 
@@ -19,7 +20,7 @@ def rotate():
 if __name__ == '__main__':
     tweet = get_first()
     if DEBUG:
-        print tweet
+        print (tweet)
     else:
         send_tweet(tweet)
     rotate()

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 """
 Send a personalized email to a stack of people.
