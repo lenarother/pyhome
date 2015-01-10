@@ -203,7 +203,8 @@ def setup_package():
           cmdclass=cmdclass,
           tests_require=['pytest-cov', 'pytest'],
           command_options=command_options,
-          entry_points={'console_scripts': CONSOLE_SCRIPTS})
+          entry_points={'console_scripts': CONSOLE_SCRIPTS},
+          scripts=['bin/todo'],)
 
 if __name__ == "__main__":
     setup_package()
