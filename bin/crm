@@ -1,0 +1,7 @@
+#/usr/bin/env python3
+
+import sys
+
+from pyhome.crm import run_crm
+run_crm(sys.argv[1:])
+
