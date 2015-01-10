@@ -1,0 +1,9 @@
+Liebe{{M:r}} {{firstname}},
+
+dies ist eine mit Python verschickte personalisierte Mail. Du kannst sie gleich löschen.
+
+Du bekommst als {{F:Frau}}{{M:Mann}} automatisch die richtige Anrede.
+
+Viele Grüsse,
+    Kristian
+
