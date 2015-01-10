@@ -87,3 +87,8 @@ It may also be used to change the url, license and description setting.
 
     Replace the content of this file with a description of your project.
 
+
+Using virtualenv with Python 3
+==============================
+virtualenv -p python3 .
+

@@ -3,7 +3,8 @@ import os
 import re
 from unittest import TestCase, main
 sys.path.append(os.sep.join(os.getcwd().split(os.sep)[:-1]))
-from pyhome.crm import CRM, Contact
+from pyhome.crm import CRM, Contact, run_crm
+
 
 TEST_DATA_DIR = os.getcwd() + os.sep + 'test_data' + os.sep
  
@@ -64,7 +65,8 @@ class CRMTests(TestCase):
 
     def test_search_text(self):
         crm = CRM()
-        crm.load_contacts(open(TEST_DATA_DIR + 'sample_contacts.txt'))
+        with open(TEST_DATA_DIR + 'sample_contacts.txt') as f:
+            crm.load_contacts(f)
         result = crm.search_text('Marie Curie')
         self.assertEqual(len(result), 2)
 
@@ -75,7 +77,8 @@ class CRMTests(TestCase):
 
     def test_load_contacts(self):
         crm = CRM()
-        crm.load_contacts(open(TEST_DATA_DIR + 'sample_contacts.txt'))
+        with open(TEST_DATA_DIR + 'sample_contacts.txt') as f:
+            crm.load_contacts(f)
         self.assertEqual(crm.n_contacts, 11)
 
     def test_load_tab_fourspace(self):
@@ -110,31 +113,36 @@ class CRMTests(TestCase):
         out2 = self.crm.write_contacts()
         self.assertEqual(out, out2)
 
+    def test_main(self):
+        os.environ.update({'CRM_PATH': TEST_DATA_DIR})
+        run_crm(['Dumbo'])
+
  
-class CommandLineTests(TestCase):
+class CrmCommandLineTests(TestCase):
 
     def setUp(self):
-        os.environ.update({'ACADEMIS_CRM_PATH': TEST_DATA_DIR})
+        os.environ.update({'CRM_PATH': TEST_DATA_DIR})
         #self.pathcmd = 'export ACADEMIS_CRM_PATH=%s;'% TEST_DATA_DIR
         #print TEST_DATA_DIR
 
     def tearDown(self):
-        pass
-        #if os.path.exists('out.tmp'):
-        #    os.remove('out.tmp')
+        if os.path.exists('out.tmp'):
+            os.remove('out.tmp')
     
     def test_main(self):
         #os.system(self.pathcmd + 'crm Karol > out.tmp')
-        os.system('../pyhome/'+'crm Karol > out.tmp')
-        out = open('out.tmp').read()
-        print 'ALA', out
-        self.assertTrue('11 contacts' in out)
+        os.system('crm Karol > out.tmp')
+        with open('out.tmp') as f:
+            out = f.read()
+        self.assertTrue('11 contacts loaded' in out)
         self.assertTrue('Marie Curie' in out)
 
     def test_warning(self):
-        os.system(self.pathcmd + 'crm Karol > out.tmp')
-        out = open('out.tmp').read()
+        os.system('crm Karol > out.tmp')
+        with open('out.tmp') as f:
+            out = f.read()
         self.assertTrue('INVALID RECORD' in out)
+        # out.close()
 
 
 if __name__ == '__main__':

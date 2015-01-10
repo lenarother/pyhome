@@ -103,16 +103,17 @@ class CRM:
         return [c for c in self.contacts if c.contains(text)]
 
 
-if __name__ == '__main__':
-    if len(sys.argv) != 2:
+def run_crm(argv):
+    if len(argv) != 1:
         print ('usage crm <search term>')
     else:
-        term = sys.argv[1]
-        path = os.environ.get('ACADEMIS_CRM_PATH', '')
+        term = argv[0]
+        path = os.environ.get('CRM_PATH', '')
         crm = CRM()
         for filename in os.listdir(path):
             if filename.endswith('.txt'):
-                crm.load_contacts(open(path + filename))
+                with open(path + filename) as f:
+                    crm.load_contacts(f)
         print ('%i contacts loaded' % crm.n_contacts)
         print ('-' * 79)
         if crm.warnings:
@@ -122,4 +123,8 @@ if __name__ == '__main__':
         for contact in crm.search_text(term):
             print (contact.format_text())
             print ('-' * 79)
+
+
+if __name__ == '__main__':
+    run_crm(sys.argv)
 
