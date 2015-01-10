@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 
 import sys
 import os
 
-TODO_LIST_FILE = os.environ.get('ACADEMIS_TODO_FILE', 'todo.list')
+TODO_LIST_FILE = os.environ.get('TODO_FILE', 'todo.list')
 
 class TaskManager:
 
@@ -50,21 +51,27 @@ class TaskManager:
             self.wip.append(task)
             return True
         else:
-            print 'WIP limit reached!'
+            print('WIP limit reached!')
 
     def move_to_done(self, task):
         self.wip.remove(task)
         self.done.append(task)
     
-
-if __name__ == '__main__':
+def main():
+    if not os.getenv('TODO_FILE'):
+        print('Set environmental variable TODO_FILE.')
+    if not os.path.isfile(os.getenv('TODO_FILE')):
+        print('Create todo file {}'.format(os.getenv('TODO_FILE')))
     taskmng = TaskManager(open(TODO_LIST_FILE))
     if len(sys.argv) > 1:
         task = ' '.join(sys.argv[1:])
         taskmng.todos.append(task)
         taskmng.write_tasks(open(TODO_LIST_FILE, 'w'))
-        print 'task added'
+        print('task added')
     else:
         for task in taskmng.todos:
-            print '    ',task
+            print('    ',task)
 
+
+if __name__ == '__main__':
+    main()

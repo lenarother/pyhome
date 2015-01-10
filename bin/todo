@@ -1,1 +1,5 @@
-python $ACADEMIS_TODO_APP $*
+#!/usr/bin/env python3
+
+#python $ACADEMIS_TODO_APP $*
+from pyhome import todo
+todo.main()
