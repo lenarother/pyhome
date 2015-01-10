@@ -1,0 +1,7 @@
+#/usr/bin/env python3
+
+import sys
+from pyhome.personalized_mail import run_mail
+
+run_mail(sys.argv[1], sys.argv[2])
+

@@ -60,11 +60,7 @@ def create_mails(template, recipients):
     mails = [Mail(template, r) for r in recipients]
     return mails
 
-
-if __name__ == '__main__':
-    template = sys.argv[1]
-    recipients = sys.argv[2]
-
+def run_mail(template, recipients):
     r = load_recipients(recipients)
     t = open(template).read()
     mails = create_mails(t, r)
@@ -84,4 +80,8 @@ if __name__ == '__main__':
        for m in mails:
             m.send(subject)
             print ('MAIL TO %s SENT.' % m.email)
+
+
+if __name__ == '__main__':
+    run_mail(sys.argv[1], sys.argv[2])
 
