@@ -3,7 +3,7 @@
 import sys
 import os
 
-TODO_LIST_FILE = os.environ.get('TODO_FILE', 'todo.list')
+from pyhome import TODO_LIST_FILE
 
 class TaskManager:
 
@@ -58,10 +58,6 @@ class TaskManager:
         self.done.append(task)
     
 def main():
-    if not os.getenv('TODO_FILE'):
-        print('Set environmental variable TODO_FILE.')
-    if not os.path.isfile(os.getenv('TODO_FILE')):
-        print('Create todo file {}'.format(os.getenv('TODO_FILE')))
     taskmng = TaskManager(open(TODO_LIST_FILE))
     if len(sys.argv) > 1:
         task = ' '.join(sys.argv[1:])

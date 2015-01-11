@@ -1,1 +1,4 @@
-python $ACADEMIS_WIP_APP $*
+#!/usr/bin/env python3
+
+from pyhome import wip
+wip.main()

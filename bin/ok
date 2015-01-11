@@ -1,1 +1,4 @@
-python $ACADEMIS_OK_APP $*
+#!/usr/bin/env python3
+
+from pyhome import ok
+ok.main()

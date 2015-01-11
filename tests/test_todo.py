@@ -26,7 +26,7 @@ class TodoCommandLineTests(TestCase):
 
     def setUp(self):
         os.system('cp %s todo.tmp' % TEST_TODO_FILE)
-        self.pathcmd = 'export ACADEMIS_TODO_FILE=todo.tmp;'
+        self.pathcmd = 'export TODO_FILE=todo.tmp;'
 
     def tearDown(self):
         if os.path.exists('todo.tmp'):
@@ -35,7 +35,8 @@ class TodoCommandLineTests(TestCase):
             os.remove('out.tmp')
     
     def test_todo(self):
-        os.system(self.pathcmd + 'todo > out.tmp')
+        os.system(self.pathcmd)
+        os.system('todo > out.tmp')
         out = open('out.tmp').read()
         self.assertTrue('buy milk' in out)
         self.assertTrue('release code' in out)
@@ -43,8 +44,11 @@ class TodoCommandLineTests(TestCase):
         self.assertFalse('write test todo-data' in out)
 
     def test_done(self):
-        os.system(self.pathcmd + 'done > out.tmp')
+        os.system(self.pathcmd)
+        os.system('done > out.tmp')
         out = open('out.tmp').read()
+        import pdb; pdb.set_trace()
+        
         self.assertFalse('buy milk' in out)
         self.assertFalse('release code' in out)
         self.assertFalse('call Peter' in out)
