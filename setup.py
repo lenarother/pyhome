@@ -204,7 +204,8 @@ def setup_package():
           tests_require=['pytest-cov', 'pytest'],
           command_options=command_options,
           entry_points={'console_scripts': CONSOLE_SCRIPTS},
-          scripts=['bin/crm', 'bin/todo', 'bin/ok', 'bin/wip'],)
+          scripts=['bin/crm', 'bin/halfsize', 'bin/mails', 'bin/ok', 'bin/todo',  'bin/wip', ],
+          )
 
           
 if __name__ == "__main__":

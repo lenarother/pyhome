@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import smtplib
 from email.message import EmailMessage
 from email.headerregistry import Address
-#from email.message import Message
-#from email.MIMEText import MIMEText 
-#from email.MIMEBase import MIMEBase 
-#from email import encoders
 
 
 class MailAccount:
