@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+
+from pyhome import play_music
+play_music.main()

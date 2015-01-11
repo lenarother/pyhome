@@ -33,7 +33,7 @@ class MusicPlayer:
         Play given playslist.
         When name is not awailable print s all possibilities.
         """
-        if not self.playlists.has_key(name):
+        if not name in self.playlists.keys():#self.playlists.has_key(name):
             self.show_available()
         else:
             browser = webdriver.Firefox()
@@ -42,14 +42,13 @@ class MusicPlayer:
     def show_available(self):
         """Prints list of available playlists."""
         for li in self.playlists.keys():
-            print li
+            print(li)
 
     def stop(self):
         pass
 
 
-
-if __name__ == '__main__':
+def main():
     playm = MusicPlayer()
     if len(sys.argv) > 1:
         name = ''.join(sys.argv[1:])
@@ -58,4 +57,8 @@ if __name__ == '__main__':
             playm.show_available()
         else:
             playm.play(name)
+        
+            
+if __name__ == '__main__':
+    main()
         
